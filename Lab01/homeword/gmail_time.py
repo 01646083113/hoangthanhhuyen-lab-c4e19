@@ -1,6 +1,6 @@
 from gmail import GMail, Message
 from random import choice
-import datetime
+from datetime import datetime, time
 
 html_content = """
 <p style="text-align: center;">C&ocirc;̣ng hòa xã h&ocirc;̣i chủ nghĩa Vi&ecirc;̣t Nam</p>
@@ -22,10 +22,10 @@ msg = Message(" Mail subject ",
                 to = "20130075@student.hust.edu.vn",   
                 html = htmt_to_update)
 
-now = datetime.datetime.now()
-print(now)
-time_to_send = now.hour
 
-while time_to_send < 7:
-    gmail.send(msg)
+
+while True:
+    now = datetime.now().time().hour
+    if now == 7 :
+        gmail.send(msg)
     break
