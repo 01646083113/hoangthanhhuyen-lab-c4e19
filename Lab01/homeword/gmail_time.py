@@ -28,4 +28,4 @@ while True:
     now = datetime.now().time().hour
     if now == 7 :
         gmail.send(msg)
-    break
+        break
